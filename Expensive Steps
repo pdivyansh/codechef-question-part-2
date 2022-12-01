@@ -1,0 +1,55 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t>0){
+		    int n=sc.nextInt();
+		    int x1=sc.nextInt();
+		    int y1=sc.nextInt();
+		    int x2=sc.nextInt();
+		    int y2=sc.nextInt();
+		    int arr[]=new int[4]; 
+		    arr[0]=y1;
+		    arr[1]=x1;
+		    arr[2]=n+1-x1;
+		    arr[3]=n+1-y1;
+		     int brr[]=new int[4]; 
+		    brr[0]=y2;
+		    brr[1]=x2;
+		    brr[2]=n+1-x2;
+		    brr[3]=n+1-y2;
+		    
+		    int min1=arr[0];
+		    int min2=brr[0];
+		    for(int i=0;i<4;i++){
+		        if(min1>arr[i]){
+		            min1=arr[i];
+		        }
+		        if(min2>brr[i]){
+		           min2= brr[i];
+		        }
+		        //System.out.println(brr[i]); 
+		    
+		    }
+		  
+		    int min=min1+min2;
+		    int diff=Math.abs(x2-x1)+Math.abs(y2-y1);
+		    int min_vlaue=Math.min(min,diff);
+		  System.out.println(min_vlaue);
+		    
+		  //  System.out.println(min1+ " "+min2); 
+		    
+		    t--;
+		}
+	}
+}
