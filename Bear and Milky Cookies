@@ -1,0 +1,55 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t>0){
+		    int n=sc.nextInt();
+		    String str[]=new String[n];
+		    for(int i=0;i<n;i++){
+		        str[i]=sc.next();
+		    }
+		    
+		    if(n==1){
+		        if(str[0].equals("cookie")){
+		            System.out.println("NO"); 
+		        }else{
+		             System.out.println("YES");
+		        }
+		        
+		    }else{
+		        boolean flag=true;
+    		    for(int i=0;i<n-1;i++){
+    		        String st_i=str[i];
+    		        String st_j=str[i+1];
+    		        if(st_i.equals("cookie")){
+    		            if(st_j.equals("cookie")){
+    		                flag=false;
+    		                break;
+    		            }
+    		        }
+    		    }
+    		    if(str[n-1].equals("cookie")){
+    		        flag=false;
+    		    }
+    		    if(flag){
+    		        System.out.println("YES");
+    		        
+    		    }else{
+    		       System.out.println("NO"); 
+    		    }
+		    }
+		    
+		    t--;
+		}
+	}
+}
